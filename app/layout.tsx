@@ -1,9 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Header from './components/Header'
+import { Fredoka } from 'next/font/google'
+import Header from './components/Header/Header'
 
-const inter = Inter({ subsets: ['latin'] })
+const fredoka = Fredoka({ subsets: ['latin'], display: 'block', })
 
 export const metadata: Metadata = {
   title: 'Edens Land',
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={inter.className}><Header />{children}</body>
+      <body className={fredoka.className}><Header />{children}</body>
     </html>
   )
 }

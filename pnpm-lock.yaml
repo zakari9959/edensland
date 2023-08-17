@@ -21,13 +21,13 @@ dependencies:
     specifier: 13.4.13
     version: 13.4.13(eslint@8.46.0)(typescript@5.1.6)
   next:
-    specifier: 13.4.13
+    specifier: ^13.4.13
     version: 13.4.13(react-dom@18.2.0)(react@18.2.0)
   react:
-    specifier: 18.2.0
+    specifier: ^18.2.0
     version: 18.2.0
   react-dom:
-    specifier: 18.2.0
+    specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   typescript:
     specifier: 5.1.6

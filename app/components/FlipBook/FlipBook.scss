@@ -1,0 +1,70 @@
+.book {
+  width: 1000px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  position: relative;
+  flex: 1;
+  margin: 10px;
+   & .left-page,
+   .right-page {
+     width: 50%;
+     height: 100%;
+     background-size: cover;
+     background-position: center;
+     display: flex;
+     justify-content: center;
+     position: absolute;
+     backface-visibility: hidden;
+     transition: transform 0.5s ease;
+     padding: 10px 5px;
+   }
+   & .left-page {
+    left: 0;
+    transform-origin: right center;
+    background-color: blue;
+    margin-right: 5px;
+  }
+  
+  & .right-page {
+    right: 0;
+    transform-origin: left center;
+    background-color: red;
+    margin-left: 5px;
+  }   
+      &__page__content {
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+        max-width: 80%;
+        text-align: center;
+      }
+      button {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        bottom: 30px;
+        margin: 10px 20px;
+        z-index: 8;
+      }      
+      button:hover {
+        background-color: #0056b3;
+      }
+      
+      button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+  }
+  
+  
+  
+  
+  

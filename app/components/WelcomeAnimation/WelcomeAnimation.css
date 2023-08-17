@@ -1,0 +1,29 @@
+@charset "UTF-8";
+.animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Couleur de fond, ajustez selon vos préférences */
+  animation: fadeInAndOut 2s ease-in-out forwards;
+  z-index: 10;
+}
+.animation h1 {
+  font-size: 100px;
+  text-align: center;
+  opacity: 1;
+  margin: 0 0 150px;
+}
+
+@keyframes fadeInAndOut {
+  0%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=WelcomeAnimation.css.map */

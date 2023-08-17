@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import WelcomeAnimation from "../WelcomeAnimation/WelcomeAnimation";
+import './Header.css'
 
 interface Page {
   path: string;
@@ -16,10 +18,11 @@ export default function Header(): JSX.Element {
   ];
 
   return (
+    <>
     <header>
       <h1>{title}</h1>
       <nav>
-        <ul>
+        <ul className="navbar">
           {pages.map((page) => (
             <li key={page.path}>
               <Link href={page.path}>{page.title}</Link>
@@ -28,5 +31,6 @@ export default function Header(): JSX.Element {
         </ul>
       </nav>
     </header>
+    <WelcomeAnimation /></>
   );
 }

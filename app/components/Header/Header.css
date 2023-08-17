@@ -1,0 +1,31 @@
+header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header h1 {
+  font-size: 44px;
+  margin: 0;
+  background-color: #ffbe0b;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 40px;
+}
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 50px;
+}
+header .navbar a {
+  display: block;
+  margin: 0 20px;
+  transition: transform 0.2s, color 0.2s;
+  width: 50px;
+  padding: 10px 10px;
+}
+header .navbar a:hover {
+  color: #8338ec;
+  transform: scale(1.2);
+}/*# sourceMappingURL=Header.css.map */
