@@ -2,7 +2,8 @@
     "id": 1,
     "age": "3-6",
     "title": "Les Aventures de Léo le Petit Explorateur",
-    "text": [
+    "personnageDescription": "Léo, le personnage central des \"Aventures de Léo le Petit Explorateur\", se présente comme un jeune explorateur au charme authentiquement enfantin. À l'âge tendre de 3 ans, il incarne une curiosité qui transcende les limites de l'imagination et une innocence qui irradie à travers chaque expression. Les traits de son visage sont modelés avec délicatesse pour refléter sa jeunesse, avec des proportions qui demeurent fidèles à son âge tendre.\n\nSes yeux captivants sont d'une couleur vive et émerveillée, semblables aux cieux d'un jour ensoleillé. Leur éclat reflète une curiosité sans bornes, une soif d'exploration qui danse dans chaque regard. Son sourire, une constante lueur de joie, éclaire son visage constamment, symbole de sa passion pour l'art de découvrir l'inconnu.\n\nUne chevelure brune, douce et soyeuse, encadre son visage d'une manière légèrement ébouriffée, témoignant des aventures intrépides qu'il entreprend avec un enthousiasme débordant. Son visage, une toile pure où se dessine une aventure sans fin, est empreint d'une innocence rayonnante, évoquant la curiosité et l'optimisme qui définissent la jeunesse.\n\nLéo porte un chapeau d'explorateur aux bords larges, un emblème de son désir de repousser les frontières du connu. Sa tenue simple et pratique, composée d'une chemise légère et d'un short assorti, traduit un sens de la liberté de mouvement, une toile vierge pour les explorations infinies qui s'offrent à lui.\n\nLe sac à dos qu'il porte, une constante accrochée à ses épaules, révèle son état d'esprit toujours prêt à l'inconnu. Ce sac, un contenant magique d'aventures potentielles, abrite non seulement des collations pour sustenter son appétit, mais aussi les trésors qu'il accumule avec une innocence naturelle, des cailloux aux couleurs vives aux plumes aux teintes chatoyantes.\n\nSes mains, petites et agiles, sont constamment prêtes à saisir le monde qui l'entoure, révélant une envie irrésistible de toucher, d'explorer et de ressentir chaque texture et chaque contour.\n\nLéo incarne un mélange harmonieux d'audace intrépide et de prudence. Chaque pas qu'il entreprend est une déclaration d'enthousiasme pour l'aventure, chaque sourire une invitation à partager sa perspective merveilleuse du monde. Lorsque vous donnez vie à Léo à travers vos illustrations, veillez à saisir avec précision ses yeux étincelants, son sourire radieux, son chapeau d'explorateur qui est bien plus qu'un simple accessoire, et ce sac à dos qui est à la fois un récipient matériel et symbolique de ses découvertes.\n\nCette description devrait fournir un niveau élevé de précision artistique, minimisant au maximum toute marge d'erreur.",
+      "text": [
       "Il était une fois, dans un monde magique, un petit explorateur du nom de Léo. Léo avait tout juste 3 ans et était plein de curiosité. Il adorait partir à la découverte de nouvelles aventures passionnantes.",
       "Un jour ensoleillé, Léo se leva avec un grand sourire. Aujourd'hui, il avait décidé d'explorer la mystérieuse forêt qui se trouvait derrière sa maison. Il mit son chapeau d'explorateur et prit son sac à dos rempli de collations.",
       "Léo marcha joyeusement à travers les arbres géants et les buissons touffus. Il entendit des oiseaux chanter et vit même un écureuil espiègle qui se balançait d'une branche à l'autre.",
@@ -15,10 +16,22 @@
       "En insérant la clé dans la boîte à musique, Léo déclencha une mélodie magique qui remplit l'air de bonheur. Les animaux de la forêt et les créatures féeriques se rassemblèrent pour célébrer. Et ainsi, Léo le Petit Explorateur avait trouvé de nouveaux amis et découvert le pouvoir de la gentillesse et de l'aventure."
     ]
   },
-    {
-        "id": 2,
-        "age": "3-6",
-        "title": "Minim amet Lorem ex excepteur aute aliqua ad magna consequat deserunt ad magna veniam dolor.",
-        "text":"Ullamco nulla cillum aliqua labore quis qui nulla enim velit duis irure dolor do. Id veniam ullamco velit ad occaecat exercitation culpa nostrud aliquip. Ea in sint anim elit elit sunt mollit laboris Lorem culpa officia ex reprehenderit."
-    }
+  {
+    "id": 2,
+    "age": "0-3",
+    "title": "Les Aventures du Petit Ourson Curieux",
+    "characters description": ["Le Petit Ourson Curieux", "Maman Ourse"],
+    "text": [
+      "Il était une fois, dans la grande forêt, un petit ourson curieux. Il avait un pelage tout doux et un nez noir tout rond.",
+      "Le Petit Ourson Curieux aimait explorer la forêt avec sa maman ourse. Un jour ensoleillé, ils décidèrent de partir à la recherche de miel.",
+      "Ils marchèrent parmi les arbres verts et les fleurs colorées. Le vent doux caressait leur pelage. Soudain, le Petit Ourson Curieux aperçut quelque chose de brillant dans un buisson.",
+      "Il s'approcha avec précaution et découvrit une ruche remplie de délicieux miel doré ! Mais les abeilles travaillaient dur pour protéger leur trésor.",
+      "Le Petit Ourson Curieux voulait tellement goûter au miel, mais il avait peur des abeilles piquantes. C'est alors que sa maman ourse eut une idée.",
+      "Elle lui montra comment fabriquer une fleur en papier coloré. Ensemble, ils posèrent la fleur près de la ruche et reculèrent en douceur.",
+      "Les abeilles sortirent pour voir cette nouvelle fleur. Pendant ce temps, le Petit Ourson Curieux utilisa son courage pour prendre un peu de miel.",
+      "Les abeilles revinrent, mais quand elles virent la fleur en papier, elles sourirent et dansèrent autour. Elles pensaient que c'était une vraie fleur !",
+      "Le Petit Ourson Curieux et sa maman profitèrent du miel délicieux. Le petit ourson apprit qu'être malin et gentil pouvait aider dans toutes les aventures.",
+      "Et c'est ainsi que le Petit Ourson Curieux apprit à explorer le monde avec curiosité et à résoudre les problèmes avec créativité. Et chaque fois qu'il mangeait du miel, il se souvenait de cette journée spéciale."
+    ]
+  }
 ]
