@@ -6,7 +6,9 @@ export default function Home() {
   console.log(bookId);
     return (
     <main>
+      <section className='welcome__text'>
       <h2>{welcomemessage}</h2>
+      </section>
       <FlipBook2 bookId={bookId} />
     </main>
   )

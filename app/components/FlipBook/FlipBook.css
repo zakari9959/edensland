@@ -1,6 +1,8 @@
 .book {
-  width: 1000px;
-  height: 100%;
+  height: 800px;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,48 +10,33 @@
   position: relative;
   flex: 1;
   margin: 10px;
+  background-color: #8B4513;
 }
 .book__page {
-  width: 50%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
+  height: 98%;
+  width: 98%;
+  padding: 50px;
   display: flex;
   justify-content: center;
   position: absolute;
-  backface-visibility: hidden;
   padding: 10px 5px;
+  background-color: #f5f5db;
+  backface-visibility: hidden;
 }
 .book__page__content {
   padding: 20px;
-  width: 90%;
+  font-size: 24px;
+  text-align: center;
+  width: 99%;
+  height: 100%;
+  border-radius: 5px;
   height: 90%;
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transform: rotateY(0deg);
+  background-color: #f5f5dc;
 }
 .book__page--hidden {
   display: none;
-}
-.book__page__left {
-  left: 0;
-  transform-origin: right center;
-  background-color: blue;
-  margin-right: 5px;
-  transform: rotateY(0deg);
-}
-.book__page__left--behind {
-  transform: rotateY(-180deg);
-}
-.book__page__right {
-  right: 0;
-  transform-origin: left center;
-  background-color: red;
-  margin-left: 5px;
-  transform: rotateY(0deg);
-}
-.book__page__right--behind {
-  transform: rotateY(180deg);
 }
 .book button {
   margin-top: 1rem;
