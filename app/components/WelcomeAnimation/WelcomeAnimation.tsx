@@ -1,10 +1,10 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
-import  './WelcomeAnimation.css';
+import './WelcomeAnimation.css';
 
 const WelcomeAnimation: React.FC = () => {
-    const title: string = "Eden's Land";
-    const [animationComplete, setAnimationComplete] = useState(false);
+  const title: string = "Eden's Land";
+  const [animationComplete, setAnimationComplete] = useState<boolean>(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,9 +18,8 @@ const WelcomeAnimation: React.FC = () => {
     return null; // Retourne null pour que le composant soit retiré du DOM
   }
 
-
   return (
-    <div className="animation">
+    <div className='animation'>
       <h1>{title}</h1>
     </div>
   );

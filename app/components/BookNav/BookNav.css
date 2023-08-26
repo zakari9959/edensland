@@ -1,0 +1,15 @@
+.booknav__desc {
+  text-align: center;
+}
+.booknav__selection {
+  margin: 20px;
+}
+.booknav__selection h3 {
+  margin: 8px;
+}
+.booknav__selection__item {
+  padding: 4px 5px;
+  margin: 5px 5px;
+  cursor: pointer;
+  background-color: black;
+}/*# sourceMappingURL=BookNav.css.map */
