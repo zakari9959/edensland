@@ -1,5 +1,6 @@
 [
   {
+    "cover": "/assets/bookcover1.webp",
     "id": 1,
     "age": "3-6",
     "title": "Les Aventures de Léo le Petit Explorateur",
@@ -18,6 +19,7 @@
     ]
   },
   {
+    "cover": "/assets/bookcover1.webp",
     "id": 2,
     "age": "0-3",
     "title": "Les Aventures du Petit Ourson Curieux",

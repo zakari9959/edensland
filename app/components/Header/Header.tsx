@@ -8,8 +8,8 @@ export default function Header(): JSX.Element {
   const title: string = "Eden's Land";
   const pages: Page[] = [
     { path: '/', title: 'Home' },
-    { path: '/about', title: 'About' },
-    { path: '/contact', title: 'Contact' },
+    { path: '/bibli', title: 'Ma Bibliothèque' },
+    { path: `/reader`, title: 'Lecteur' },
     // Add more pages here if needed
   ];
 

@@ -1,10 +1,15 @@
+'use client';
 import React from 'react';
 import { BookNavProps } from '../../types';
 import './BookNav.css';
 import Select, { SingleValue, ActionMeta } from 'react-select';
 import { SelectOption } from '../../types';
+import Image from 'next/image';
+import { useSelectedBookContext } from '../../context/bookDataContext';
+import { SelectedBookContextType } from '../../types';
 
-function BookNav({ setSelectedBook, bookData }: BookNavProps) {
+function BookNav({ bookData }: BookNavProps) {
+  const { selectedBook, setSelectedBook } = useSelectedBookContext();
   const welcomemessage: string =
     "Bienvenue sur Eden's Land, l'application entièrement dédiée à la lecture pour enfants";
 
@@ -29,9 +34,20 @@ function BookNav({ setSelectedBook, bookData }: BookNavProps) {
   return (
     <section className='booknav'>
       <h2 className='booknav__desc'>{welcomemessage}</h2>
+      {selectedBook && (
+        <Image
+          className='booknav__cover'
+          src={`/assets/bookcover${selectedBook.id}.webp`}
+          width={150}
+          height={200}
+          alt='Book Cover'
+        />
+      )}
       <div className='booknav__selection'>
+        {' '}
         <h3>Choisissez un livre :</h3>
         <Select
+          className='booknav__selection__select'
           name='setbookid'
           id='setbookid'
           options={options}

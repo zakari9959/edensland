@@ -1,19 +1,19 @@
 'use client';
 import React, { useState, useEffect, useMemo } from 'react';
 import './FlipBook.css';
-import books from '../../data/books.json';
 import { motion } from 'framer-motion';
 import { Book, FlipBookProps } from '../../types';
 import FlipNav from '../FlipNav/FlipNav';
+import Image from 'next/image';
+import { useSelectedBookContext } from '../../context/bookDataContext';
+import { useCurrentPageContext } from '../../context/currentPageContext';
 
-const FlipBook: React.FC<FlipBookProps> = ({ bookId }) => {
-  const [currentPage, setCurrentPage] = useState(0);
+const FlipBook: React.FC<FlipBookProps> = () => {
+  const { currentPage, setCurrentPage } = useCurrentPageContext();
   const [isFlippingRight, setIsFlippingRight] = useState<boolean | null>(null);
   const [isHalfway, setIsHalfway] = useState(false);
-
-  const selectedBook: Book | undefined = books.find(
-    (book) => book.id === bookId
-  );
+  const [isCoverPageVisible, setIsCoverPageVisible] = useState(true);
+  const { selectedBook } = useSelectedBookContext();
 
   if (!selectedBook) {
     return <div>Error: Book not found.</div>;
@@ -29,17 +29,14 @@ const FlipBook: React.FC<FlipBookProps> = ({ bookId }) => {
   };
   const ANIMATION_DURATION = 0.8;
   const props = {
-    bookId: bookId,
-    currentPage: currentPage,
-    setCurrentPage: setCurrentPage,
     isFlippingRight: isFlippingRight,
     setIsFlippingRight: setIsFlippingRight,
     numberOfPages: numberOfPages,
     setIsHalfway: setIsHalfway,
     isLastPage: isLastPage,
-    selectedBook: selectedBook,
+    isCoverPageVisible: isCoverPageVisible,
+    setIsCoverPageVisible: setIsCoverPageVisible,
   };
-
   return (
     <>
       <FlipNav {...props} />
@@ -90,7 +87,16 @@ const FlipBook: React.FC<FlipBookProps> = ({ bookId }) => {
           }}
         >
           <div className='book__page__content'>
-            <p>{selectedBook.text[currentPage]}</p>
+            {isCoverPageVisible ? (
+              <Image
+                width={400}
+                height={600}
+                src={`/assets/bookcover${selectedBook.id}.webp`}
+                alt='Book Cover'
+              />
+            ) : (
+              <p>{selectedBook.text[currentPage]}</p>
+            )}
           </div>
         </motion.div>
         <motion.div

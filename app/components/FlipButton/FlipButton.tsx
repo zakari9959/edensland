@@ -1,19 +1,21 @@
 import React from 'react';
 import { FlipNavProps } from '../../types';
+import { useCurrentPageContext } from '../../context/currentPageContext';
 
 export default function FlipButton({
-  currentPage,
   numberOfPages,
   setIsFlippingRight,
   setIsHalfway,
   isFlippingRight,
-  setCurrentPage,
   isLastPage,
+  isCoverPageVisible,
+  setIsCoverPageVisible,
 }: FlipNavProps) {
+  const { currentPage, setCurrentPage } = useCurrentPageContext();
   const TRANSITION_DELAY = 500;
   const HALFWAY_DELAY = 1000;
-  const updatePage = (newPage: number, flippingRight: boolean | null) => {
-    setIsFlippingRight(flippingRight);
+  const updatePage = (newPage: number, isFlippingRight: boolean | null) => {
+    setIsFlippingRight(isFlippingRight);
     setTimeout(() => {
       setIsHalfway(true);
       setTimeout(() => {
@@ -49,12 +51,23 @@ export default function FlipButton({
         Previous
       </button>
       <button
-        onClick={nextPage}
+        onClick={() =>
+          isCoverPageVisible ? setIsCoverPageVisible(false) : nextPage()
+        }
         disabled={
           isLastPage || isFlippingRight === false || isFlippingRight === true
         }
       >
         Next
+      </button>
+      <button
+        onClick={() => {
+          setIsCoverPageVisible(true);
+          setCurrentPage(0);
+        }}
+        disabled={isCoverPageVisible}
+      >
+        Close
       </button>
     </div>
   );

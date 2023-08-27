@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react';
-import Select, { SingleValue, ActionMeta } from 'react-select';
-import { SelectOption, Book } from '../../types';
+'use client';
+import React from 'react';
 import { FlipNavProps } from '../../types';
 import FlipButton from '../FlipButton/FlipButton';
 import FlipSelect from '../FlipSelect/FlipSelect';
+import './FlipNav.css';
 
 export default function FlipNav({ ...props }: FlipNavProps) {
   return (

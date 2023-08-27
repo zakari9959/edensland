@@ -2,8 +2,16 @@ export interface Page {
     path: string;
     title: string;
   }
-
+export  interface SelectedBookContextType {
+  selectedBook: Book,
+  setSelectedBook: (book: Book) => void
+  }
+  export  interface CurrentPageContextType {
+    currentPage: number,
+    setCurrentPage: (currentPage: number) => void
+    }
 export interface Book {
+    cover: string;
     id: number;
     age: string;
     title: string;
@@ -17,22 +25,19 @@ export interface SelectOption {
   }
 
 export interface BookNavProps  {
-    setSelectedBook: (book: Book) => void;
     bookData: Book[];
   };
 
 export interface FlipBookProps {
-    bookId: number;
-    text: string[];
+   
   }
   
 export interface FlipNavProps {
-    currentPage: number;
-    setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
     isFlippingRight: boolean | null;
     setIsFlippingRight: React.Dispatch<React.SetStateAction<boolean | null>>;
     numberOfPages: number;
     setIsHalfway: React.Dispatch<React.SetStateAction<boolean>>;
     isLastPage: boolean;
-    selectedBook: Book | undefined;
+    isCoverPageVisible: boolean;
+    setIsCoverPageVisible: React.Dispatch<React.SetStateAction<boolean>>;
   }

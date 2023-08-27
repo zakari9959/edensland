@@ -31,7 +31,8 @@ a {
   cursor: pointer;
 }
 
-main {
+main,
+.reader {
   display: flex;
   flex-direction: column;
   align-items: center;

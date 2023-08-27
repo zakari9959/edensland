@@ -2,16 +2,17 @@
   &__desc {
     text-align: center;
   }
+  &__cover {
+    display: block;
+    margin: 0 auto;
+  }
   &__selection {
     margin: 20px;
     & h3 {
       margin: 8px;
     }
-    &__item {
-      padding: 4px 5px;
-      margin: 5px 5px;
-      cursor: pointer;
-      background-color: black;
+    &__select {
+      z-index: 20;
     }
   }
 }

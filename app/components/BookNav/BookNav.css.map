@@ -1,1 +1,1 @@
-{"version":3,"sources":["BookNav.scss","BookNav.css"],"names":[],"mappings":"AACE;EACE,kBAAA;ACAJ;ADEE;EACE,YAAA;ACAJ;ADCI;EACE,WAAA;ACCN;ADCI;EACE,gBAAA;EACA,eAAA;EACA,eAAA;EACA,uBAAA;ACCN","file":"BookNav.css"}
+{"version":3,"sources":["BookNav.scss","BookNav.css"],"names":[],"mappings":"AACE;EACE,kBAAA;ACAJ;ADEE;EACE,cAAA;EACA,cAAA;ACAJ;ADEE;EACE,YAAA;ACAJ;ADCI;EACE,WAAA;ACCN;ADCI;EACE,WAAA;ACCN","file":"BookNav.css"}

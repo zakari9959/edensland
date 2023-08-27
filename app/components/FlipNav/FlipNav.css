@@ -1,0 +1,6 @@
+.book__page__navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}/*# sourceMappingURL=FlipNav.css.map */
