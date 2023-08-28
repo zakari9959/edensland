@@ -42,23 +42,4 @@
 }
 .book__page__navigation {
   z-index: 10;
-}
-.book button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  bottom: 30px;
-  margin: 10px 20px;
-}
-.book button:hover {
-  background-color: #0056b3;
-}
-.book button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
 }/*# sourceMappingURL=FlipBook.css.map */

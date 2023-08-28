@@ -1,0 +1,27 @@
+.flipbuttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flipbuttons button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  bottom: 30px;
+  margin: 10px 20px;
+}
+.flipbuttons button:hover {
+  background-color: #0056b3;
+}
+.flipbuttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.flipbuttons__navbuttons {
+  display: flex;
+}/*# sourceMappingURL=FlipButton.css.map */

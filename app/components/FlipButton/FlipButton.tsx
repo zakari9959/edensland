@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlipNavProps } from '../../types';
 import { useCurrentPageContext } from '../../context/currentPageContext';
-
+import './FlipButton.css';
 export default function FlipButton({
   numberOfPages,
   setIsFlippingRight,
@@ -39,36 +39,42 @@ export default function FlipButton({
   };
 
   return (
-    <div>
-      <button
-        onClick={prevPage}
-        disabled={
-          currentPage === 0 ||
-          isFlippingRight === false ||
-          isFlippingRight === true
-        }
-      >
-        Previous
-      </button>
-      <button
-        onClick={() =>
-          isCoverPageVisible ? setIsCoverPageVisible(false) : nextPage()
-        }
-        disabled={
-          isLastPage || isFlippingRight === false || isFlippingRight === true
-        }
-      >
-        Next
-      </button>
+    <div className='flipbuttons'>
       <button
         onClick={() => {
           setIsCoverPageVisible(true);
           setCurrentPage(0);
         }}
-        disabled={isCoverPageVisible}
+        disabled={
+          isCoverPageVisible ||
+          isFlippingRight === false ||
+          isFlippingRight === true
+        }
       >
         Close
       </button>
+      <div className='flipbuttons__navbuttons'>
+        <button
+          onClick={prevPage}
+          disabled={
+            currentPage === 0 ||
+            isFlippingRight === false ||
+            isFlippingRight === true
+          }
+        >
+          Previous
+        </button>
+        <button
+          onClick={() =>
+            isCoverPageVisible ? setIsCoverPageVisible(false) : nextPage()
+          }
+          disabled={
+            isLastPage || isFlippingRight === false || isFlippingRight === true
+          }
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 }

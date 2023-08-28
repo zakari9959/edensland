@@ -21,15 +21,13 @@ export default function FlipSelect(props: FlipNavProps) {
   const handlePageChange = (selectedOption: SingleValue<SelectOption>) => {
     if (selectedOption) {
       const selectedPageId = (selectedOption as SelectOption).value;
-      if (selectedPageId) {
-        setCurrentPage(selectedPageId - 1);
-        console.log(selectedPageId);
-        console.log(selectedPageId - 1);
-        console.log(currentPage);
+      {
+        selectedPageId === 0
+          ? setCurrentPage(0)
+          : setCurrentPage(selectedPageId);
       }
     }
   };
-
   const onChange = (
     option: SelectOption | null,
     actionMeta: ActionMeta<SelectOption>
