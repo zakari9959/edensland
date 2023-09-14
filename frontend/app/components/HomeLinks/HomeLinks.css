@@ -1,0 +1,13 @@
+.homelinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homelinks a {
+  margin: 20px;
+  padding: 20px;
+  color: #8338ec;
+  background-color: #ffbe0b;
+  border-radius: 5px;
+  text-align: center;
+}/*# sourceMappingURL=HomeLinks.css.map */
