@@ -1,5 +1,6 @@
 [
   {
+    "imageUrl": "",
     "cover": "/assets/bookcover1.webp",
     "id": 1,
     "age": "3-6",
@@ -19,6 +20,7 @@
     ]
   },
   {
+    "imageUrl": "",
     "cover": "/assets/bookcover1.webp",
     "id": 2,
     "age": "0-3",

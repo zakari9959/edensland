@@ -18,7 +18,7 @@ const FlipBook: React.FC<FlipBookProps> = () => {
   if (!selectedBook) {
     return <div>Error: Book not found.</div>;
   }
-
+  console.log(selectedBook);
   const numberOfPages: number = selectedBook.text.length;
   const isLastPage: boolean = currentPage === numberOfPages - 1;
   const animationCommon = {
@@ -38,7 +38,7 @@ const FlipBook: React.FC<FlipBookProps> = () => {
     setIsCoverPageVisible: setIsCoverPageVisible,
   };
   return (
-    <>
+    <div className='flipbook'>
       <FlipNav {...props} />
       <div className={`book ${isFlippingRight ? 'flipping' : ''}`}>
         <motion.div
@@ -91,7 +91,7 @@ const FlipBook: React.FC<FlipBookProps> = () => {
               <Image
                 width={400}
                 height={600}
-                src={`/assets/bookcover${selectedBook.id}.webp`}
+                src={selectedBook.imageUrl}
                 alt='Book Cover'
               />
             ) : (
@@ -115,7 +115,7 @@ const FlipBook: React.FC<FlipBookProps> = () => {
           </div>
         </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 

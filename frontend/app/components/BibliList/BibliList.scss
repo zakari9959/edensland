@@ -1,20 +1,36 @@
+@use '../../colors';
 .bibli {
   display: flex;
   flex-direction: column;
   align-items: center;
   & .biblilist {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     &__book {
+      flex-basis: 20%;
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 20px 10px;
-    }
-    & h3 {
-      width: 150px;
-      text-align: center;
-    }
-    &__img {
+      &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 10px;
+        & h3 {
+          width: 150px;
+          text-align: center;
+        }
+      }
+      &__button {
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 14px;
+        border: 3px solid red;
+        color: colors.$secondary;
+        background-color: colors.$tertiary;
+      }
     }
   }
 }

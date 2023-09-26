@@ -9,7 +9,8 @@ export default function FlipSelect(props: FlipNavProps) {
   const { selectedBook, setSelectedBook } = useSelectedBookContext();
   const { currentPage, setCurrentPage } = useCurrentPageContext();
   const options: SelectOption[] | undefined = useMemo(() => {
-    if (selectedBook && selectedBook.text) {
+    if (selectedBook && selectedBook.text.length > 2) {
+      console.log(selectedBook.text);
       return selectedBook.text.map((pagenb, index) => ({
         key: index,
         value: index,

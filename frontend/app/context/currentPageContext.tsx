@@ -1,7 +1,6 @@
 'use client';
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { CurrentPageContextType, Book } from '../types';
-import bookData from '../data/books.json';
+import { CurrentPageContextType } from '../types';
 
 const CurrentPageContext = createContext<CurrentPageContextType | undefined>(
   undefined

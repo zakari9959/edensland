@@ -1,7 +1,8 @@
 'use client';
-import { type } from 'os';
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import './CreateBook.css';
+import GptText from '../GptText/GptText';
 
 type Inputs = {
   userId: number;
@@ -18,7 +19,6 @@ export default function CreateBook() {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
-
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     console.log(data);
     try {
@@ -97,9 +97,12 @@ export default function CreateBook() {
           <input type='text' {...register('text', { required: true })} />
           {errors.text && <span>Ce champ est requis</span>}
         </div>
+        {/* <GptText /> */}
+        <button type='submit' className='create__button'>
+          Créer le livre
+        </button>
 
-        <button type='submit'>Créer le livre</button>
-        {<p>Livre créé avec succès</p>}
+        {/*  {response && response.status === 200 && <p>Livre créé avec succès</p>} */}
       </form>
     </div>
   );

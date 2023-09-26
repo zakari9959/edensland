@@ -3,7 +3,7 @@ export interface Page {
     title: string;
   }
 export  interface SelectedBookContextType {
-  selectedBook: Book,
+  selectedBook: Book | null,
   setSelectedBook: (book: Book) => void
   }
   export  interface CurrentPageContextType {
@@ -15,14 +15,18 @@ export  interface SelectedBookContextType {
       setUserId: (userId: number) => void
     }
 export interface Book {
+    imageUrl: string;
+    userId?: number;
     cover: string;
-    id: number;
+    _id: number;
     age: string;
     title: string;
     text: string[];
     "characters description"?: string[];
   }
-
+export interface DeleteBookProps {
+    bookId: number; // Remplacez "string" par le type de données réel de bookId si ce n'est pas une chaîne de caractères
+  }
 export interface SelectOption {
     value: number;
     label: number | string;

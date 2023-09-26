@@ -4,6 +4,7 @@
   align-items: center;
 }
 .homelinks a {
+  width: 80%;
   margin: 20px;
   padding: 20px;
   color: #8338ec;

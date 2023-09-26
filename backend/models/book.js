@@ -6,7 +6,7 @@ const bookSchema = mongoose.Schema({
   age: { type: String, required: true },
   imageUrl: { type: String, required: false },
   personnageDescription: { type: String, required: true },
-  text: { type: String, required: true },
+  text: { type: Array, required: true },
 });
 
 module.exports = mongoose.model("Book", bookSchema);
