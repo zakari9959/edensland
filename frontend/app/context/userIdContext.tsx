@@ -1,7 +1,6 @@
 'use client';
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { UserIdContextType, Book } from '../types';
-import bookData from '../data/books.json';
+import { UserIdContextType } from '../types';
 
 const UserIdContext = createContext<UserIdContextType | undefined>(undefined);
 

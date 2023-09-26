@@ -1,7 +1,12 @@
 'use client';
-import { createContext, useContext, useState, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from 'react';
 import { SelectedBookContextType, Book } from '../types';
-import bookData from '../data/books.json';
 
 const SelectedBookContext = createContext<SelectedBookContextType | undefined>(
   undefined
@@ -12,8 +17,36 @@ export const SelectedBookContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  const [selectedBook, setSelectedBook] = useState<Book>(bookData[0]);
+  const [bookData, setBookData] = useState<Book[]>([]);
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null); // Initialisez-le à undefined au début
 
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    };
+
+    fetch('http://localhost:4000/api/books', {
+      method: 'GET',
+      headers: headers,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setBookData(data);
+        setSelectedBook(data[0]); // Mettez à jour selectedBook ici avec la première donnée
+      })
+      .catch((error) => {
+        console.error(
+          "Une erreur s'est produite lors de la récupération des données depuis l'API :",
+          error
+        );
+      });
+  }, []);
+
+  console.log(bookData);
+  console.log(selectedBook);
   return (
     <SelectedBookContext.Provider value={{ selectedBook, setSelectedBook }}>
       {children}

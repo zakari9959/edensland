@@ -16,14 +16,14 @@ function BookNav({ bookData }: BookNavProps) {
   const handleBookChange = (selectedOption: SingleValue<SelectOption>) => {
     if (selectedOption) {
       const selectedBookId = (selectedOption as SelectOption).value;
-      const selectedBook = bookData.find((book) => book.id === selectedBookId);
+      const selectedBook = bookData.find((book) => book._id === selectedBookId);
       if (selectedBook) {
         setSelectedBook(selectedBook);
       }
     }
   };
   const options: SelectOption[] = [
-    ...bookData.map((book) => ({ value: book.id, label: book.title })),
+    ...bookData.map((book) => ({ value: book._id, label: book.title })),
   ];
   const onChange = (
     option: SelectOption | null,
@@ -37,7 +37,7 @@ function BookNav({ bookData }: BookNavProps) {
       {selectedBook && (
         <Image
           className='booknav__cover'
-          src={`/assets/bookcover${selectedBook.id}.webp`}
+          src={selectedBook.imageUrl}
           width={150}
           height={200}
           alt='Book Cover'

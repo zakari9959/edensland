@@ -19,6 +19,13 @@ export default function HomeLinks() {
           tout les livres que vous auraient ajouter à votre bibliothèques
         </p>
       </Link>
+      <Link href='/login'>
+        <h2>Inscription & Connexion</h2>
+        <p>
+          Connectez-vous avec une adresse mail et un mot de passe pour accéder à
+          votre bibliothèque.
+        </p>
+      </Link>
     </div>
   );
 }

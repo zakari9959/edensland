@@ -1,5 +1,9 @@
+.booknav {
+  width: 30%;
+}
 .booknav__desc {
   text-align: center;
+  margin: 35px;
 }
 .booknav__cover {
   display: block;

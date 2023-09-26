@@ -13,10 +13,9 @@ export default function Header(): JSX.Element {
     { path: '/', title: 'Home' },
     { path: '/bibli', title: 'Ma Bibliothèque' },
     { path: `/reader`, title: 'Lecteur' },
-    { path: `/login`, title: 'Login' },
     // Add more pages here if needed
   ];
-
+  console.log(userId);
   return (
     <>
       <header>
@@ -30,7 +29,7 @@ export default function Header(): JSX.Element {
             ))}
             {userId ? (
               <li>
-                <NavLink href='/logout'>Déconnexion</NavLink>
+                <NavLink href='/login'>Déconnexion</NavLink>
               </li>
             ) : (
               <li>

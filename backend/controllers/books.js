@@ -6,11 +6,19 @@ exports.createBook = (req, res, next) => {
   console.log(req.body.book);
   const bookObject = JSON.parse(req.body.book);
 
+  // Supposez que le texte à découper soit dans la propriété 'text' de bookObject
+  const textToSplit = bookObject.text;
+
+  // Séparez la chaîne de caractères en un tableau en utilisant un séparateur (par exemple, l'espace)
+  const textArray = textToSplit.split('", ');
+
+  console.log(textArray);
   console.log(bookObject);
   delete bookObject.userId;
   // Crée une nouvelle instance de Book avec les propriétés de bookObject
   const book = new Book({
     ...bookObject,
+    text: textArray,
     userId: req.auth.userId,
     imageUrl: `${req.protocol}://${req.get("host")}/images/${req.file.name}`,
   });

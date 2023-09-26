@@ -5,14 +5,31 @@
 }
 .bibli .biblilist {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .bibli .biblilist__book {
+  flex-basis: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px 10px;
 }
-.bibli .biblilist h3 {
+.bibli .biblilist__book__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 10px;
+}
+.bibli .biblilist__book__link h3 {
   width: 150px;
   text-align: center;
+}
+.bibli .biblilist__book__button {
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  border: 3px solid red;
+  color: #ffbe0b;
+  background-color: #8338ec;
 }/*# sourceMappingURL=BibliList.css.map */
