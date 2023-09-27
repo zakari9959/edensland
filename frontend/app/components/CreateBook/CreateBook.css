@@ -1,4 +1,17 @@
-.create__button {
+.create__book {
+  width: 500px;
+  margin: 0 auto;
+}
+.create__book h2 {
+  margin: 20px 10px;
+}
+.create__book form div {
+  margin: 20px 20px;
+}
+.create__book__button {
   padding: 10px 20px;
   margin: 20px 10px;
+  border-radius: 20px;
+  border: solid 1px #8338ec;
+  background-color: #ffbe0b;
 }/*# sourceMappingURL=CreateBook.css.map */

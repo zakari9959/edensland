@@ -3,6 +3,10 @@
   flex-direction: column;
   align-items: center;
 }
+.bibli__flex {
+  display: flex;
+  gap: 20px;
+}
 .bibli .biblilist {
   display: flex;
   flex-wrap: wrap;
@@ -23,6 +27,8 @@
 }
 .bibli .biblilist__book__link h3 {
   width: 150px;
+  min-height: 50px;
+  margin-bottom: 10px;
   text-align: center;
 }
 .bibli .biblilist__book__button {

@@ -1,4 +1,18 @@
-.create__button {
-  padding: 10px 20px;
-  margin: 20px 10px;
+@use '../../colors';
+.create__book {
+  width: 500px;
+  margin: 0 auto;
+  & h2 {
+    margin: 20px 10px;
+  }
+  & form div {
+    margin: 20px 20px;
+  }
+  &__button {
+    padding: 10px 20px;
+    margin: 20px 10px;
+    border-radius: 20px;
+    border: solid 1px colors.$tertiary;
+    background-color: colors.$secondary;
+  }
 }
