@@ -62,41 +62,43 @@ export default function BibliList() {
   return (
     <div className='bibli'>
       <h2>Ma Bibliothèque</h2>
-      {loading ? ( // Render loading indicator when loading is true
-        <p>Chargement en cours...</p>
-      ) : (
-        <div className='biblilist'>
-          {books && books.length > 0 ? (
-            books.map((book) => (
-              <div key={book._id} className='biblilist__book'>
-                <Link
-                  href={'/reader'}
-                  className='biblilist__book__link'
-                  onClick={() => setSelectedBook(book)}
-                >
-                  <h3>{book.title}</h3>
-                  <Image
-                    className='biblilist__book__img'
-                    width={100}
-                    height={150}
-                    src={book.imageUrl}
-                    alt='Book Cover'
-                  />
-                </Link>
-                <button
-                  className='biblilist__book__button'
-                  onClick={() => handleDeleteBook(book._id)}
-                >
-                  Supprimer
-                </button>
-              </div>
-            ))
-          ) : (
-            <p>Aucun livre disponible</p>
-          )}
-        </div>
-      )}
-      <CreateBook />
+      <div className='bibli__flex'>
+        {loading ? ( // Render loading indicator when loading is true
+          <p>Chargement en cours...</p>
+        ) : (
+          <div className='biblilist'>
+            {books && books.length > 0 ? (
+              books.map((book) => (
+                <div key={book._id} className='biblilist__book'>
+                  <Link
+                    href={'/reader'}
+                    className='biblilist__book__link'
+                    onClick={() => setSelectedBook(book)}
+                  >
+                    <h3>{book.title}</h3>
+                    <Image
+                      className='biblilist__book__img'
+                      width={100}
+                      height={150}
+                      src={book.imageUrl}
+                      alt='Book Cover'
+                    />
+                  </Link>
+                  <button
+                    className='biblilist__book__button'
+                    onClick={() => handleDeleteBook(book._id)}
+                  >
+                    Supprimer
+                  </button>
+                </div>
+              ))
+            ) : (
+              <p>Aucun livre disponible</p>
+            )}
+          </div>
+        )}
+        <CreateBook />
+      </div>
     </div>
   );
 }

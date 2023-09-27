@@ -62,7 +62,7 @@ export default function CreateBook() {
   };
 
   return (
-    <div>
+    <div className='create__book'>
       <h2>Créer un nouveau livre</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
@@ -93,12 +93,15 @@ export default function CreateBook() {
           {errors.personnageDescription && <span>Ce champ est requis</span>}
         </div>
         <div>
-          <label>Text: </label>
+          <label>
+            Texte (Chaque page doit être entre guillemet et séparé par une
+            virgule &quot;page1&quot;,&quot;page2&quot;,&quot;page3&quot;,):{' '}
+          </label>
           <input type='text' {...register('text', { required: true })} />
           {errors.text && <span>Ce champ est requis</span>}
         </div>
         {/* <GptText /> */}
-        <button type='submit' className='create__button'>
+        <button type='submit' className='create__book__button'>
           Créer le livre
         </button>
 
