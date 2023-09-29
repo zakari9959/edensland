@@ -14,8 +14,6 @@ const memoryStorage = [];
 require("dotenv").config();
 const MongoUserName = process.env.MONGO_USER_NAME;
 const MongoMdp = process.env.MONGO_MDP;
-console.log(MongoUserName);
-console.log(MongoMdp);
 mongoose
   .connect(
     `mongodb+srv://${MongoUserName}:${MongoMdp}@edensland.6qi0hlq.mongodb.net/?retryWrites=true&w=majority`,

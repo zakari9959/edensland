@@ -11,7 +11,7 @@ import { SelectedBookContextType } from '../../types';
 function BookNav({ bookData }: BookNavProps) {
   const { selectedBook, setSelectedBook } = useSelectedBookContext();
   const welcomemessage: string =
-    "Bienvenue sur Eden's Land, l'application entièrement dédiée à la lecture pour enfants";
+    'Sélectionner votre livre et commencez à lire:';
 
   const handleBookChange = (selectedOption: SingleValue<SelectOption>) => {
     if (selectedOption) {
@@ -34,15 +34,6 @@ function BookNav({ bookData }: BookNavProps) {
   return (
     <section className='booknav'>
       <h2 className='booknav__desc'>{welcomemessage}</h2>
-      {selectedBook && (
-        <Image
-          className='booknav__cover'
-          src={selectedBook.imageUrl}
-          width={150}
-          height={200}
-          alt='Book Cover'
-        />
-      )}
       <div className='booknav__selection'>
         {' '}
         <h3>Choisissez un livre :</h3>
@@ -51,10 +42,24 @@ function BookNav({ bookData }: BookNavProps) {
           name='setbookid'
           id='setbookid'
           options={options}
-          defaultValue={options[0]}
+          defaultValue={options.find(
+            (option) => option.value === selectedBook?._id
+          )}
           onChange={onChange}
         ></Select>
       </div>
+      {selectedBook && (
+        <div className='booknav__cover'>
+          <h3>{selectedBook.title}</h3>
+          <Image
+            className='booknav__cover'
+            src={selectedBook.imageUrl}
+            width={150}
+            height={200}
+            alt='Book Cover'
+          />
+        </div>
+      )}
     </section>
   );
 }

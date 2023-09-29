@@ -8,7 +8,7 @@ import { UserIdContextProvider } from './context/userIdContext';
 const fredoka = Fredoka({ subsets: ['latin'], display: 'block' });
 
 export const metadata: Metadata = {
-  title: 'Edens Land',
+  title: "Eden's Land - Des aventures infinies à portée de doigt !",
   description: 'Une application web entièrement dédié aux enfants.',
 };
 

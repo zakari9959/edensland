@@ -55,7 +55,9 @@ export default function FlipButton({
       </button>
       <div className='flipbuttons__navbuttons'>
         <button
-          onClick={prevPage}
+          onClick={() =>
+            isCoverPageVisible ? setIsCoverPageVisible(false) : prevPage()
+          }
           disabled={
             currentPage === 0 ||
             isFlippingRight === false ||

@@ -4,11 +4,17 @@
   align-items: center;
 }
 .homelinks a {
-  width: 80%;
+  width: 70%;
+  min-height: 100px;
   margin: 20px;
   padding: 20px;
-  color: #8338ec;
-  background-color: #ffbe0b;
+  background-color: rgba(191, 110, 155, 0.6);
   border-radius: 5px;
   text-align: center;
+  transition: ease-out 0.3s;
+}
+.homelinks a:hover {
+  background-color: #4c2556;
+  color: #ddf0ff;
+  transform: scale(1.1);
 }/*# sourceMappingURL=HomeLinks.css.map */

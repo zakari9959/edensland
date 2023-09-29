@@ -11,11 +11,15 @@ body {
 }
 
 body {
-  background-color: #ffffff; /* Adjust the background color */
-  color: #fb5607;
+  background-color: #ddf0ff; /* Adjust the background color */
+  color: #4c2556;
   display: flex;
   flex-direction: column;
   margin: auto 20px;
+}
+
+button {
+  cursor: pointer;
 }
 
 ul {
@@ -23,7 +27,7 @@ ul {
 }
 
 a {
-  color: #fb5607;
+  color: #4c2556;
   text-decoration: none;
   margin: 0 10px;
   font-weight: bold;
@@ -37,6 +41,7 @@ main,
   flex-direction: row;
   height: 100%;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 @media (prefers-color-scheme: dark) {
