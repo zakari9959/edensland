@@ -10,13 +10,13 @@
   & .biblilist {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     &__book {
       flex-basis: 20%;
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 20px 10px;
+      justify-content: flex-end;
       &__link {
         display: flex;
         flex-direction: column;
@@ -24,8 +24,7 @@
         margin: 20px 10px;
         & h3 {
           width: 150px;
-          min-height: 50px;
-          margin-bottom: 10px;
+          margin-bottom: 20px;
           text-align: center;
         }
       }
@@ -34,9 +33,13 @@
         border-radius: 25px;
         font-size: 14px;
         border: 3px solid red;
-        color: colors.$secondary;
-        background-color: colors.$tertiary;
+        color: colors.$tertiary;
+        background-color: colors.$primary;
       }
+    }
+    &__book__link:hover {
+      transition: transform ease-in 0.4s;
+      transform: scale(1.2);
     }
   }
 }

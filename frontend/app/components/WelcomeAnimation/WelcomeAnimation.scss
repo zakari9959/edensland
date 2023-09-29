@@ -8,7 +8,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: white; /* Couleur de fond, ajustez selon vos préférences */
+  background-color: colors.$tertiary;
   animation: fadeInAndOut 2s ease-in-out forwards;
   z-index: 100;
   & h1 {

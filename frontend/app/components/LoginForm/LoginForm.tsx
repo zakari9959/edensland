@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './LoginForm.css';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
+import { useUserIdContext } from '@/app/context/userIdContext';
 
 type Inputs = {
   email: string;
@@ -12,6 +13,7 @@ type Inputs = {
 export default function LoginForm() {
   const [isLogin, setIsLogin] = useState(false);
   const router = useRouter();
+  const { userId, setUserId } = useUserIdContext();
 
   const {
     register,
@@ -24,9 +26,6 @@ export default function LoginForm() {
     : 'http://localhost:4000/api/auth/signup'; // Route d'inscription
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data);
-    console.log({ data });
-    console.log(apiUrl);
     try {
       const response = await fetch(apiUrl, {
         method: 'post',
@@ -35,7 +34,6 @@ export default function LoginForm() {
         },
         body: JSON.stringify(data),
       });
-      console.log(response);
       if (response.ok) {
         // Gérer la réponse réussie ici
         const responseData = await response.json(); // Récupérer la réponse au format JSON
@@ -44,7 +42,8 @@ export default function LoginForm() {
         isLogin
           ? (console.log('Connexion réussie !'),
             localStorage.setItem('token', token),
-            localStorage.setItem('userId', userId))
+            localStorage.setItem('userId', userId),
+            setUserId(userId))
           : console.log('Inscription réussie !');
         router.push('/');
       } else {

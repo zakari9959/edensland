@@ -8,6 +8,7 @@
 .booknav__cover {
   display: block;
   margin: 0 auto;
+  text-align: center;
 }
 .booknav__selection {
   margin: 20px;

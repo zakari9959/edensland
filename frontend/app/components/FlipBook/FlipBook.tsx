@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import './FlipBook.css';
 import { motion } from 'framer-motion';
-import { Book, FlipBookProps } from '../../types';
+import { FlipBookProps } from '../../types';
 import FlipNav from '../FlipNav/FlipNav';
 import Image from 'next/image';
 import { useSelectedBookContext } from '../../context/bookDataContext';
@@ -27,7 +27,7 @@ const FlipBook: React.FC<FlipBookProps> = () => {
     x: '0%',
     zIndex: 8,
   };
-  const ANIMATION_DURATION = 0.8;
+  const ANIMATION_DURATION = 1;
   const props = {
     isFlippingRight: isFlippingRight,
     setIsFlippingRight: setIsFlippingRight,

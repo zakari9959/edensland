@@ -1,3 +1,4 @@
+@use '../../colors';
 .flipbuttons {
   display: flex;
   flex-direction: column;
@@ -6,16 +7,21 @@
   & button {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #007bff;
+    background-color: colors.$primary;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition:
+      transform 0.2s ease-out,
+      color 0.2s ease-out,
+      background-color 0.2s ease-out;
     bottom: 30px;
     margin: 10px 20px;
     &:hover {
-      background-color: #0056b3;
+      transform: scale(1.1);
+      color: colors.$primary;
+      background-color: colors.$secondary;
     }
 
     &:disabled {

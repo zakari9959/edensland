@@ -9,7 +9,7 @@ export const UserIdContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  const [userId, setUserId] = useState(0);
+  const [userId, setUserId] = useState<number>(0);
 
   return (
     <UserIdContext.Provider value={{ userId, setUserId }}>
