@@ -10,6 +10,7 @@
   & .biblilist {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     &__book {
       flex-basis: 20%;
       display: flex;
@@ -38,8 +39,8 @@
       }
     }
     &__book__link:hover {
-      transition: transform ease-in 0.4s;
-      transform: scale(1.2);
+      transition: transform ease-out 0.4s;
+      transform: scale(1.1);
     }
   }
 }

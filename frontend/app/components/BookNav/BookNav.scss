@@ -1,5 +1,6 @@
 .booknav {
-  width: 30%;
+  max-width: 30%;
+  margin-left: 20px;
   &__desc {
     text-align: center;
     margin: 35px;
@@ -8,14 +9,19 @@
     display: block;
     margin: 0 auto;
     text-align: center;
+    & h3 {
+      width: 200px;
+      margin: 20px auto;
+    }
   }
   &__selection {
     margin: 20px;
     & h3 {
       margin: 8px;
     }
-    &__select {
+    & #setbookid * {
       z-index: 20;
+      cursor: pointer;
     }
   }
 }

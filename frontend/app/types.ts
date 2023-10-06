@@ -11,8 +11,8 @@ export  interface SelectedBookContextType {
     setCurrentPage: (currentPage: number) => void
     }
     export interface UserIdContextType {
-      userId: number;
-      setUserId: (userId: number) => void
+      userId: string;
+      setUserId: (userId: string) => void
     }
 export interface Book {
     imageUrl: string;

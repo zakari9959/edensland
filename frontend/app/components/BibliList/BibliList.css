@@ -10,6 +10,7 @@
 .bibli .biblilist {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .bibli .biblilist__book {
   flex-basis: 20%;
@@ -39,6 +40,6 @@
   background-color: #4c2556;
 }
 .bibli .biblilist__book__link:hover {
-  transition: transform ease-in 0.4s;
-  transform: scale(1.2);
+  transition: transform ease-out 0.4s;
+  transform: scale(1.1);
 }/*# sourceMappingURL=BibliList.css.map */

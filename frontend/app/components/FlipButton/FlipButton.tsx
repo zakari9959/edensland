@@ -51,7 +51,7 @@ export default function FlipButton({
           isFlippingRight === true
         }
       >
-        Close
+        X
       </button>
       <div className='flipbuttons__navbuttons'>
         <button
@@ -64,7 +64,7 @@ export default function FlipButton({
             isFlippingRight === true
           }
         >
-          Previous
+          Prev
         </button>
         <button
           onClick={() =>

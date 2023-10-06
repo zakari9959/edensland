@@ -45,7 +45,7 @@ export default function LoginForm() {
             localStorage.setItem('userId', userId),
             setUserId(userId))
           : console.log('Inscription réussie !');
-        router.push('/');
+        router.push('/bibli');
       } else {
         // Gérer les erreurs ici
         isLogin

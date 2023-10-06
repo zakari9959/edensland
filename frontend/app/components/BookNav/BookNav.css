@@ -1,5 +1,6 @@
 .booknav {
-  width: 30%;
+  max-width: 30%;
+  margin-left: 20px;
 }
 .booknav__desc {
   text-align: center;
@@ -10,12 +11,17 @@
   margin: 0 auto;
   text-align: center;
 }
+.booknav__cover h3 {
+  width: 200px;
+  margin: 20px auto;
+}
 .booknav__selection {
   margin: 20px;
 }
 .booknav__selection h3 {
   margin: 8px;
 }
-.booknav__selection__select {
+.booknav__selection #setbookid * {
   z-index: 20;
+  cursor: pointer;
 }/*# sourceMappingURL=BookNav.css.map */
