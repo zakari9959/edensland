@@ -44,6 +44,10 @@ main,
   margin-bottom: 50px;
 }
 
+#setpageid * {
+  cursor: pointer;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

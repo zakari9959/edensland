@@ -38,13 +38,9 @@ function BookNav({ bookData }: BookNavProps) {
         {' '}
         <h3>Choisissez un livre :</h3>
         <Select
-          className='booknav__selection__select'
           name='setbookid'
           id='setbookid'
           options={options}
-          defaultValue={options.find(
-            (option) => option.value === selectedBook?._id
-          )}
           onChange={onChange}
         ></Select>
       </div>

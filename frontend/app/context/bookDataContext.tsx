@@ -35,7 +35,8 @@ export const SelectedBookContextProvider = ({
       .then((data) => {
         console.log(data);
         setBookData(data);
-        setSelectedBook(data[0]); // Mettez à jour selectedBook ici avec la première donnée
+        setSelectedBook(data[0]);
+        // Mettez à jour selectedBook ici avec la première donnée
       })
       .catch((error) => {
         console.error(

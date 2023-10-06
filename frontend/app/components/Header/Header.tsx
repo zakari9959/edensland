@@ -17,7 +17,7 @@ export default function Header(): JSX.Element {
     { path: `/reader`, title: 'Lecteur' },
     // Ajoutez plus de pages ici si nécessaire
   ];
-
+  console.log(userId);
   return (
     <>
       <header>
@@ -40,14 +40,15 @@ export default function Header(): JSX.Element {
                 </span>
               </li>
             ))}
-            {userId ? (
+            {userId !== '0' ? (
               <li>
                 <span className='underline'>
                   <NavLink
                     href='/login'
                     onClick={() => {
                       localStorage.removeItem('token');
-                      setUserId(0); // Mettez à jour l'état après la suppression du token
+                      localStorage.removeItem('userId');
+                      setUserId('0');
                     }}
                   >
                     Déconnexion
