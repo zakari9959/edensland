@@ -14,11 +14,12 @@ const memoryStorage = [];
 require("dotenv").config();
 const MongoUserName = process.env.MONGO_USER_NAME;
 const MongoMdp = process.env.MONGO_MDP;
+const MongoUrl = process.env.MONGO_URL;
 mongoose
-  .connect(
-    `mongodb+srv://${MongoUserName}:${MongoMdp}@edensland.6qi0hlq.mongodb.net/?retryWrites=true&w=majority`,
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+  .connect(`mongodb+srv://${MongoUserName}:${MongoMdp}${MongoUrl}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("Connexion à MongoDB réussie !"))
   .catch((error) => console.log(error));
 

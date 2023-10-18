@@ -63,7 +63,7 @@ export default function CreateBook() {
 
   return (
     <div className='create__book'>
-      <h2>Créer un nouveau livre</h2>
+      <h2>Créez un nouveau livre</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Titre:</label>
@@ -102,7 +102,7 @@ export default function CreateBook() {
         </div>
         {/* <GptText /> */}
         <button type='submit' className='create__book__button'>
-          Créer le livre
+          Créez le livre
         </button>
 
         {/*  {response && response.status === 200 && <p>Livre créé avec succès</p>} */}

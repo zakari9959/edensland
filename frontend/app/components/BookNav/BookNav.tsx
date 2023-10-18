@@ -11,7 +11,7 @@ import { SelectedBookContextType } from '../../types';
 function BookNav({ bookData }: BookNavProps) {
   const { selectedBook, setSelectedBook } = useSelectedBookContext();
   const welcomemessage: string =
-    'Sélectionner votre livre et commencez à lire:';
+    'Sélectionnez votre livre et commencez à lire:';
 
   const handleBookChange = (selectedOption: SingleValue<SelectOption>) => {
     if (selectedOption) {
