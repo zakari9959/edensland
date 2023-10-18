@@ -6,7 +6,7 @@ export default function GptText() {
 
   const handleGenerateText = async () => {
     try {
-      const apiKey = 'YOUR_API_KEY'; // Remplacez par votre clé d'API GPT-3
+      const apiKey = 'YOUR_API_KEY';
       const url = 'https://api.openai.com/v1/engines/davinci/completions';
 
       const response = await fetch(url, {
@@ -17,7 +17,7 @@ export default function GptText() {
         },
         body: JSON.stringify({
           prompt: inputText,
-          max_tokens: 50, // Nombre maximum de tokens dans la réponse
+          max_tokens: 50,
         }),
       });
 

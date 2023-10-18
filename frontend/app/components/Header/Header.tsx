@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import NavLink from 'next/link';
+import Link from 'next/link';
 import WelcomeAnimation from '../WelcomeAnimation/WelcomeAnimation';
 import './Header.css';
 import { Page } from '../../types';
@@ -36,14 +36,14 @@ export default function Header(): JSX.Element {
             {pages.map((page) => (
               <li key={page.path}>
                 <span className='underline'>
-                  <NavLink href={page.path}>{page.title}</NavLink>
+                  <Link href={page.path}>{page.title}</Link>
                 </span>
               </li>
             ))}
             {userId !== '0' ? (
               <li>
                 <span className='underline'>
-                  <NavLink
+                  <Link
                     href='/login'
                     onClick={() => {
                       localStorage.removeItem('token');
@@ -52,13 +52,13 @@ export default function Header(): JSX.Element {
                     }}
                   >
                     Déconnexion
-                  </NavLink>
+                  </Link>
                 </span>
               </li>
             ) : (
               <li>
                 <span className='underline'>
-                  <NavLink href='/login'>Connexion</NavLink>
+                  <Link href='/login'>Connexion</Link>
                 </span>
               </li>
             )}
