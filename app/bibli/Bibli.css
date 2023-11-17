@@ -1,0 +1,8 @@
+.bibli {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bibli h2 {
+  margin: 20px 0;
+}/*# sourceMappingURL=Bibli.css.map */
