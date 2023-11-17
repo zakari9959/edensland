@@ -1,7 +1,6 @@
 import React from 'react';
 import BibliList from '../components/BibliList/BibliList';
 import CreateBook from '../components/CreateBook/CreateBook';
-import GptText from '../components/GptText/GptText';
 import './Bibli.css';
 
 export default function Bibli() {
