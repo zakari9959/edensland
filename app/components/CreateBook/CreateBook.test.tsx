@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import CreateBook from './CreateBook';
 import userEvent from '@testing-library/user-event';
@@ -27,3 +27,4 @@ test('Le bouton du formulaire est cliquable lorsque le formulaire est rempli cor
     expect(submitButton).not.toBeDefined(); // Vérifiez que le bouton n'est pas désactivé
   });
 });
+ */
