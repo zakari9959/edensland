@@ -1,12 +1,12 @@
-import OpenAI from 'openai';
+/* import OpenAI from 'openai';
 
-/* interface Props {
+interface Props {
   title: string;
   age: string;
   demande: string;
   generatedText: string | null;
   setGeneratedText: (text: string) => void;
-} */
+} 
 
 export default async function GptText({}) {
   const openai = new OpenAI({
@@ -23,3 +23,4 @@ export default async function GptText({}) {
 
   return generatedText;
 }
+ */
