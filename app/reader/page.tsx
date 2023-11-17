@@ -8,7 +8,9 @@ import { Book } from '@/app/types';
 export default function Reader() {
   const [bookData, setBookData] = useState<Book[]>([]);
 
-  const token = localStorage.getItem('token');
+  const token =
+    typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+
   useEffect(() => {
     if (token) {
       fetch('http://localhost:4000/api/books', {

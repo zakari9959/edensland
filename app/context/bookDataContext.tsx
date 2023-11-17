@@ -21,7 +21,8 @@ export const SelectedBookContextProvider = ({
   const [selectedBook, setSelectedBook] = useState<Book | null>(null); // Initialisez-le à undefined au début
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token =
+      typeof window !== 'undefined' ? localStorage.getItem('token') : null;
     const headers = {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',

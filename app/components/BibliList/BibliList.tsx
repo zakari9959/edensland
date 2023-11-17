@@ -10,7 +10,8 @@ export default function BibliList() {
   const { selectedBook, setSelectedBook } = useSelectedBookContext();
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
-  const token = localStorage ? localStorage.getItem('token') : null;
+  const token =
+    typeof window !== 'undefined' ? localStorage.getItem('token') : null;
   useEffect(() => {
     if (token) {
       fetch('http://localhost:4000/api/books', {

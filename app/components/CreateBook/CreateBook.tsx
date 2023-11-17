@@ -9,8 +9,11 @@ export default function CreateBook({}: Props) {
   const [generatedText, setGeneratedText] = useState('');
   const [userInput, setUserInput] = useState('');
   const [imageUrl, setImageUrl] = useState<null | File>(null);
-  const token = localStorage.getItem('token');
-  const userId = localStorage.getItem('userId');
+  const token =
+    typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+
+  const userId =
+    typeof window !== 'undefined' ? localStorage.getItem('userId') : null;
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent) => {
