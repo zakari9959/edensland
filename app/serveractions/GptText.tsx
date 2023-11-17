@@ -1,4 +1,4 @@
-import { Configuration, OpenAIApi } from 'openai-edge';
+/* import { Configuration, OpenAIApi } from 'openai-edge';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
 
 export const runtime = 'edge';
@@ -30,4 +30,4 @@ export async function POST(req: Request) {
 
   // Respond with the stream
   return new StreamingTextResponse(stream);
-}
+} */
