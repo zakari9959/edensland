@@ -7,9 +7,14 @@ import { CurrentPageContextProvider } from '../context/currentPageContext';
 import { Book } from '@/app/types';
 export default function Reader() {
   const [bookData, setBookData] = useState<Book[]>([]);
+  const [token, setToken] = useState<string | null>(null);
 
-  const token =
-    typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    if (storedToken) {
+      setToken(storedToken);
+    }
+  }, [token]);
 
   useEffect(() => {
     if (token) {
@@ -22,11 +27,10 @@ export default function Reader() {
           if (!response.ok) {
             throw new Error('La requête a échoué.');
           }
-          // Traitez la réponse réussie ici
-          return response.json(); // Ajout pour obtenir les données JSON
+          return response.json();
         })
         .then((data) => {
-          setBookData(data); // Mettez à jour les livres avec les données reçues
+          setBookData(data);
         })
         .catch((error) => {
           console.error('Erreur lors de la requête :', error);

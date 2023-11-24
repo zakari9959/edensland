@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import OpenAI from 'openai';
 import './CreateBook.css';
+import { useUserIdContext } from '@/app/context/userIdContext';
 
 type Props = {};
 
@@ -9,11 +10,10 @@ export default function CreateBook({}: Props) {
   const [generatedText, setGeneratedText] = useState('');
   const [userInput, setUserInput] = useState('');
   const [imageUrl, setImageUrl] = useState<null | File>(null);
+  const { userId, setUserId } = useUserIdContext();
   const token =
     typeof window !== 'undefined' ? localStorage.getItem('token') : null;
 
-  const userId =
-    typeof window !== 'undefined' ? localStorage.getItem('userId') : null;
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent) => {

@@ -39,7 +39,7 @@ export default function Header(): JSX.Element {
                 </span>
               </li>
             ))}
-            {userId !== '0' ? (
+            {userId !== null ? (
               <li>
                 <span className='underline'>
                   <Link
@@ -47,7 +47,7 @@ export default function Header(): JSX.Element {
                     onClick={() => {
                       localStorage.removeItem('token');
                       localStorage.removeItem('userId');
-                      setUserId('0');
+                      setUserId(null);
                     }}
                   >
                     Déconnexion

@@ -11,8 +11,8 @@ export  interface SelectedBookContextType {
     setCurrentPage: (currentPage: number) => void
     }
     export interface UserIdContextType {
-      userId: string;
-      setUserId: (userId: string) => void
+      userId: string | null;
+      setUserId: (userId: string | null) => void
     }
 export interface Book {
     imageUrl: string;
@@ -25,7 +25,7 @@ export interface Book {
     "characters description"?: string[];
   }
 export interface DeleteBookProps {
-    bookId: number; // Remplacez "string" par le type de données réel de bookId si ce n'est pas une chaîne de caractères
+    bookId: number;
   }
 export interface SelectOption {
     value: number;

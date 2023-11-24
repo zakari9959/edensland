@@ -35,8 +35,7 @@ export default function LoginForm() {
         body: JSON.stringify(data),
       });
       if (response.ok) {
-        // Gérer la réponse réussie ici
-        const responseData = await response.json(); // Récupérer la réponse au format JSON
+        const responseData = await response.json();
         const token = responseData.token;
         const userId = responseData.userId;
         isLogin
@@ -47,7 +46,6 @@ export default function LoginForm() {
           : console.log('Inscription réussie !');
         router.push('/bibli');
       } else {
-        // Gérer les erreurs ici
         isLogin
           ? console.error('Erreur lors de la connexion')
           : console.error("Erreur lors de l'inscription");

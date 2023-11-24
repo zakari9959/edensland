@@ -16,7 +16,7 @@ const FlipBook: React.FC<FlipBookProps> = () => {
   const { selectedBook } = useSelectedBookContext();
 
   if (!selectedBook) {
-    return <div>Error: Book not found.</div>;
+    return <div>Veuillez choisir un livre ou connectez vous</div>;
   }
   const numberOfPages: number = selectedBook.text.length;
   const isLastPage: boolean = currentPage === numberOfPages - 1;
@@ -51,32 +51,32 @@ const FlipBook: React.FC<FlipBookProps> = () => {
                   transition: { duration: 0 },
                 }
               : isFlippingRight === true
-              ? {
-                  rotateY: -180,
-                  rotateZ: 0,
-                  x: '-100%',
-                  zIndex: 8,
-                  opacity: 0,
-                  transition: { duration: ANIMATION_DURATION },
-                }
-              : isFlippingRight === false
-              ? {
-                  rotateY: 180,
-                  rotateZ: 0,
-                  x: '100%',
-                  zIndex: 8,
-                  opacity: 0,
-                  transition: { duration: ANIMATION_DURATION },
-                }
-              : isFlippingRight === null
-              ? {
-                  rotateY: 0,
-                  rotateZ: 0,
-                  x: '0%',
-                  zIndex: 8,
-                  opacity: 1,
-                }
-              : { ...animationCommon }
+                ? {
+                    rotateY: -180,
+                    rotateZ: 0,
+                    x: '-100%',
+                    zIndex: 8,
+                    opacity: 0,
+                    transition: { duration: ANIMATION_DURATION },
+                  }
+                : isFlippingRight === false
+                  ? {
+                      rotateY: 180,
+                      rotateZ: 0,
+                      x: '100%',
+                      zIndex: 8,
+                      opacity: 0,
+                      transition: { duration: ANIMATION_DURATION },
+                    }
+                  : isFlippingRight === null
+                    ? {
+                        rotateY: 0,
+                        rotateZ: 0,
+                        x: '0%',
+                        zIndex: 8,
+                        opacity: 1,
+                      }
+                    : { ...animationCommon }
           }
           exit={{ ...animationCommon, display: 'none' }}
           onAnimationComplete={() => {

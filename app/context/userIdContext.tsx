@@ -1,5 +1,11 @@
 'use client';
-import { createContext, useContext, useState, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from 'react';
 import { UserIdContextType } from '../types';
 
 const UserIdContext = createContext<UserIdContextType | undefined>(undefined);
@@ -9,9 +15,13 @@ export const UserIdContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  const [userId, setUserId] = useState<string>(
-    localStorage.getItem('userId') || '0'
-  );
+  const [userId, setUserId] = useState<string | null>(null);
+  useEffect(() => {
+    const newUserId = localStorage.getItem('userId');
+    if (newUserId) {
+      setUserId(newUserId);
+    }
+  }, [userId]);
 
   return (
     <UserIdContext.Provider value={{ userId, setUserId }}>
