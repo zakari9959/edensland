@@ -13,7 +13,7 @@ export default function Header(): JSX.Element {
   const title: string = "Eden's Land";
   const pages: Page[] = [
     { path: '/', title: 'Accueil' },
-    { path: '/bibli', title: 'Ma Bibliothèque' },
+    { path: '/bibli', title: 'Bibliothèque' },
     { path: `/reader`, title: 'Lecteur' },
     // Ajoutez plus de pages ici si nécessaire
   ];

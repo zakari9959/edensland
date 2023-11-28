@@ -9,6 +9,11 @@
     text-align: center;
     border: 1px solid colors.$secondary;
   }
+  &__error {
+    color: #ff3632;
+    transition: color 0.2s ease-out;
+    margin-bottom: 25px;
+  }
   &__buttons {
     & button {
       margin: 10px;

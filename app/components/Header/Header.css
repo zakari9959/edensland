@@ -29,6 +29,10 @@ header .navbar {
   justify-content: space-between;
   gap: 20px;
   margin: 15px 20px;
+  /* & a:hover {
+    // color: colors.$secondary;
+    transform: scale(1.3);
+  } */
 }
 header .navbar .underline {
   display: inline-block;
@@ -52,6 +56,26 @@ header .navbar a {
   transition: transform 0.2s, color 0.2s;
   padding: 15px 15px;
 }
-header .navbar a:hover {
-  transform: scale(1.3);
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  header .header__name {
+    margin-left: 0;
+  }
+  header .navbar {
+    flex-wrap: wrap;
+    margin: 15px 0;
+    gap: 0;
+  }
+  header .navbar li {
+    flex-basis: 40%;
+    text-align: center;
+    width: 100%;
+    min-width: 50%;
+  }
+  header .navbar li a {
+    margin: 0;
+  }
 }/*# sourceMappingURL=Header.css.map */

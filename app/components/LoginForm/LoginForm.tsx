@@ -14,6 +14,7 @@ export default function LoginForm() {
   const [isLogin, setIsLogin] = useState(false);
   const router = useRouter();
   const { userId, setUserId } = useUserIdContext();
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const {
     register,
@@ -46,6 +47,8 @@ export default function LoginForm() {
           : console.log('Inscription réussie !');
         router.push('/bibli');
       } else {
+        const responseData = await response.json();
+        setErrorMessage(responseData.message);
         isLogin
           ? console.error('Erreur lors de la connexion')
           : console.error("Erreur lors de l'inscription");
@@ -55,16 +58,17 @@ export default function LoginForm() {
     }
   };
   return (
-    /* "handleSubmit" validera vos saisies avant d'appeler "onSubmit" */
     <form className='loginform' onSubmit={handleSubmit(onSubmit)}>
-      {/* Enregistrez votre champ en utilisant la fonction "register" */}
       <label htmlFor='email'>Email</label>
       <input type='email' {...register('email', { required: true })} />
-      {/* Affichez un message d'erreur si la validation échoue */}
-      {errors.email && <span>This field is required</span>}
+      {errors.email && (
+        <span className='loginform__error'>Insérez votre email</span>
+      )}
       <label htmlFor='password'>Password</label>
       <input type='password' {...register('password', { required: true })} />
-      {errors.password && <span>This field is required</span>}
+      {errors.password && (
+        <span className='loginform__error'>Insérez votre mot de passe</span>
+      )}
       <div className='loginform__buttons'>
         <button type='submit' onClick={() => setIsLogin(true)}>
           Connexion
@@ -74,6 +78,7 @@ export default function LoginForm() {
           Inscription
         </button>
       </div>
+      {errorMessage && <span className='loginform__error'>{errorMessage}</span>}
     </form>
   );
 }
