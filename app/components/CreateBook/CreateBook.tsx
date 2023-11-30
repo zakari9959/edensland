@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import OpenAI from 'openai';
 import './CreateBook.css';
 import { useUserIdContext } from '@/app/context/userIdContext';
+import Image from 'next/image';
 
 type Props = {};
 
@@ -89,26 +90,47 @@ export default function CreateBook({}: Props) {
   };
   return (
     <form className='create__book' onSubmit={handleSubmit}>
-      <label htmlFor='image'>
-        Je vous recommande de générer gratuitement une image avec BingChatAI
-      </label>
-      <input
-        className='create__book__image'
-        type='file'
-        accept='image/*'
-        onChange={handleImageChange}
-        required={true}
-      />
-      <textarea
-        className='create__book__text'
-        value={userInput}
-        onChange={handleUserInputChange}
-        placeholder='Entrez vos indications'
-        required={true}
-      />
-      <button type='submit' disabled={loading}>
-        {loading ? 'Génération de votre histoire...' : 'Envoyer'}
-      </button>
+      <div className='create__book__image__input create__book__image'>
+        <label htmlFor='image'>
+          Ajoutez une image de couverture pour votre livre, je vous recommande
+          de la générer gratuitement avec BingChatAI
+        </label>
+        <input
+          type='file'
+          accept='image/*'
+          onChange={handleImageChange}
+          required={true}
+          style={{ display: 'none' }}
+          id='image'
+        />
+        <label htmlFor='image' className='create__book__image'>
+          {imageUrl ? (
+            <Image
+              src={URL.createObjectURL(imageUrl)}
+              alt='Image Preview'
+              width={100}
+              height={150}
+              className='create__book__image__preview'
+            />
+          ) : (
+            <p className='create__book__image__placeholder'>+</p>
+          )}
+        </label>
+      </div>
+      <div className='create__book__right'>
+        <textarea
+          className='create__book__text'
+          value={userInput}
+          onChange={handleUserInputChange}
+          placeholder='Indiquez ce que vous souhaitez dans votre histoire'
+          required={true}
+        />
+        <button type='submit' disabled={loading}>
+          {loading
+            ? 'Génération de votre histoire...'
+            : 'Générez votre histoire'}
+        </button>
+      </div>
     </form>
   );
 }

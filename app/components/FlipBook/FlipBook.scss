@@ -1,4 +1,10 @@
 @use '../../colors';
+.notselectedbook {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  margin: 0 30px;
+}
 .flipbook {
   width: 70%;
   display: flex;
@@ -26,7 +32,6 @@
       backface-visibility: hidden;
       &__content {
         padding: 20px;
-        font-size: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -50,6 +55,22 @@
       }
       &__navigation {
         z-index: 10;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .flipbook {
+    width: 100%;
+    flex-direction: column;
+    & .book {
+      height: 400px;
+      width: 300px;
+      &__page {
+        &__content p {
+          font-size: 16px;
+        }
       }
     }
   }

@@ -39,7 +39,6 @@ main,
   flex-direction: row;
   height: 100%;
   justify-content: center;
-  margin-bottom: 50px;
 }
 #setpageid * {
   cursor: pointer;
@@ -47,5 +46,11 @@ main,
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+@media screen and (max-width: 768px) {
+  main,
+  .reader {
+    flex-direction: column;
   }
 }

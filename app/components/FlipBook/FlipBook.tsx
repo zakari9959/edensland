@@ -16,7 +16,11 @@ const FlipBook: React.FC<FlipBookProps> = () => {
   const { selectedBook } = useSelectedBookContext();
 
   if (!selectedBook) {
-    return <div>Veuillez choisir un livre ou connectez vous</div>;
+    return (
+      <div className='notselectedbook'>
+        Veuillez choisir un livre ou connectez vous
+      </div>
+    );
   }
   const numberOfPages: number = selectedBook.text.length;
   const isLastPage: boolean = currentPage === numberOfPages - 1;
