@@ -16,7 +16,7 @@ export default function BibliList() {
     typeof window !== 'undefined' ? localStorage.getItem('token') : null;
   useEffect(() => {
     if (token) {
-      fetch('http://localhost:4000/api/books', {
+      fetch('https://edensland-api.vercel.app/api/books', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -40,7 +40,7 @@ export default function BibliList() {
   }, [token]);
   const handleDeleteBook = (bookId: number) => {
     if (token) {
-      fetch(`http://localhost:4000/api/books/${bookId}`, {
+      fetch(`https://edensland-api.vercel.app/api/books/${bookId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

@@ -18,7 +18,7 @@ export default function Reader() {
 
   useEffect(() => {
     if (token) {
-      fetch('http://localhost:4000/api/books', {
+      fetch('https://edensland-api.vercel.app/api/books', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

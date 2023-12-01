@@ -28,7 +28,7 @@ export const SelectedBookContextProvider = ({
       'Content-Type': 'application/json',
     };
 
-    fetch('http://localhost:4000/api/books', {
+    fetch('https://edensland-api.vercel.app/api/books', {
       method: 'GET',
       headers: headers,
     })

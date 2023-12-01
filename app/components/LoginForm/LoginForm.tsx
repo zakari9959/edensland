@@ -23,8 +23,8 @@ export default function LoginForm() {
   } = useForm<Inputs>();
 
   const apiUrl = isLogin
-    ? 'http://localhost:4000/api/auth/login' // Route de connexion
-    : 'http://localhost:4000/api/auth/signup'; // Route d'inscription
+    ? 'https://edensland-api.vercel.app/api/auth/login' // Route de connexion
+    : 'https://edensland-api.vercel.app/api/auth/signup'; // Route d'inscription
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {

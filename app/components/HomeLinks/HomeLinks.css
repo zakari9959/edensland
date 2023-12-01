@@ -3,18 +3,27 @@
   flex-direction: column;
   align-items: center;
 }
-.homelinks a {
-  width: 70%;
+.homelinks .homelink {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+}
+.homelinks .homelink__img {
+  padding: 10px 0 10px 0;
+}
+.homelinks .homelink__desc {
+  width: 500px;
   min-height: 100px;
-  margin: 20px;
+  margin: 20px 0 20px 20px;
   padding: 20px;
   background-color: rgba(191, 110, 155, 0.6);
   border-radius: 5px;
   text-align: center;
+  font-size: 14px;
   transition: ease-out 0.3s;
 }
-.homelinks a:hover {
+.homelinks .homelink__desc:hover {
   background-color: #4c2556;
   color: #ddf0ff;
-  transform: scale(1.1);
 }/*# sourceMappingURL=HomeLinks.css.map */

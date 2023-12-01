@@ -45,7 +45,7 @@ export default function CreateBook() {
         console.log(`Clé: ${key}, Valeur: ${value}`);
       });
       console.log(JSON.stringify(formDataToSubmit));
-      const response = await fetch('http://localhost:4000/api/books', {
+      const response = await fetch('https://edensland-api.vercel.app/api/books', {
         method: 'POST',
 
         headers: {

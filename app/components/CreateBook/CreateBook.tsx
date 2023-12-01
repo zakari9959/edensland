@@ -60,13 +60,16 @@ export default function CreateBook({}: Props) {
       formDataToSubmit.append('imageUrl', imageUrl);
     }
     // Envoyer la réponse JSON à votre API personnelle
-    const apiResponse = await fetch('http://localhost:4000/api/books', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      body: formDataToSubmit, // Envoyer la réponse JSON de l'API GPT
-    });
+    const apiResponse = await fetch(
+      'https://edensland-api.vercel.app/api/books',
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formDataToSubmit, // Envoyer la réponse JSON de l'API GPT
+      }
+    );
 
     // Traiter la réponse de votre API personnelle si nécessaire
     if (apiResponse.ok) {
