@@ -41,7 +41,7 @@ export default function CreateBook({}: Props) {
     const chatCompletion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: prompt }],
-      max_tokens: 500,
+      max_tokens: 600,
       temperature: 0.7,
     });
 
