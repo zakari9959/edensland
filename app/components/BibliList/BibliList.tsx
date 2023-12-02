@@ -81,7 +81,7 @@ export default function BibliList() {
                         className='biblilist__book__img'
                         width={100}
                         height={150}
-                        src={`/${book.imageUrl}`}
+                        src={book.imageUrl}
                         alt='Book Cover'
                       />
                     </Link>
