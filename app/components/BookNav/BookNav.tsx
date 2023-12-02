@@ -35,7 +35,6 @@ function BookNav({ bookData }: BookNavProps) {
     <section className='booknav'>
       <h2 className='booknav__desc'>{welcomemessage}</h2>
       <div className='booknav__selection'>
-        {' '}
         <h3>Choisissez un livre :</h3>
         <Select
           name='setbookid'
