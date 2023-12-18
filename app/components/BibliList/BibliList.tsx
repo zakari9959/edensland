@@ -40,7 +40,7 @@ export default function BibliList() {
   }, [token]);
   const handleDeleteBook = (bookId: number) => {
     if (token) {
-      fetch(`https://edensland-api.vercel.app/api/books/${bookId}`, {
+      fetch(`http://localhost:4000/api/books/${bookId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -61,47 +61,46 @@ export default function BibliList() {
   };
 
   return (
-    <div className='bibli'>
-      <div className='bibli__flex'>
-        {userId !== null ? (
-          loading ? (
-            <p>Chargement...</p>
-          ) : (
-            <div className='biblilist'>
-              {books && books.length > 0 ? (
-                books.map((book) => (
-                  <div key={book._id} className='biblilist__book'>
-                    <Link
-                      href={'/reader'}
-                      className='biblilist__book__link'
-                      onClick={() => setSelectedBook(book)}
-                    >
-                      <h3>{book.title}</h3>
-                      <Image
-                        className='biblilist__book__img'
-                        width={100}
-                        height={150}
-                        src={book.imageUrl}
-                        alt='Book Cover'
-                      />
-                    </Link>
-                    <button
-                      className='biblilist__book__button'
-                      onClick={() => handleDeleteBook(book._id)}
-                    >
-                      Supprimer
-                    </button>
-                  </div>
-                ))
-              ) : (
-                <p>Aucun livre disponible</p>
-              )}
-            </div>
-          )
+    <>
+      {userId !== null ? (
+        loading ? (
+          <p>Chargement...</p>
         ) : (
-          <p>Veuillez vous connecter</p>
-        )}
-      </div>
-    </div>
+          <div className='biblilist'>
+            {books && books.length > 0 ? (
+              books.map((book) => (
+                <div key={book._id} className='biblilist__book'>
+                  <Link
+                    href={'/reader'}
+                    className='biblilist__book__link'
+                    onClick={() => setSelectedBook(book)}
+                  >
+                    <h3>{book.title}</h3>
+                    <Image
+                      key={book._id} // Assurez-vous d'avoir une clé unique pour chaque livre
+                      className='biblilist__book__img'
+                      width={100}
+                      height={150}
+                      src={book.imageUrl}
+                      alt={`Couverture du livre ${book.title}`}
+                    />
+                  </Link>
+                  <button
+                    className='biblilist__book__button'
+                    onClick={() => handleDeleteBook(book._id)}
+                  >
+                    Supprimer
+                  </button>
+                </div>
+              ))
+            ) : (
+              <p>Aucun livre disponible</p>
+            )}
+          </div>
+        )
+      ) : (
+        <p>Veuillez vous connecter</p>
+      )}
+    </>
   );
 }

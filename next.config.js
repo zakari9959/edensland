@@ -3,7 +3,14 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['localhost'], // Ajoutez ici le domaine ou l'adresse IP autorisée
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'edenslandimages.s3.eu-west-3.amazonaws.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

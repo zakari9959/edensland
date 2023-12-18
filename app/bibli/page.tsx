@@ -5,10 +5,10 @@ import './Bibli.css';
 
 export default function Bibli() {
   return (
-    <div className='bibli'>
+    <main className='bibli'>
       <h2>Ma Bibliothèque</h2>
       <CreateBook />
       <BibliList />
-    </div>
+    </main>
   );
 }
