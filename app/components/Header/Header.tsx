@@ -9,7 +9,11 @@ import { useUserIdContext } from '../../context/userIdContext';
 
 export default function Header(): JSX.Element {
   const { userId, setUserId } = useUserIdContext();
-
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    setUserId(null);
+  };
   const title: string = "Eden's Land";
   const pages: Page[] = [
     { path: '/', title: 'Accueil' },
@@ -42,14 +46,7 @@ export default function Header(): JSX.Element {
             {userId !== null ? (
               <li>
                 <span className='underline'>
-                  <Link
-                    href='/login'
-                    onClick={() => {
-                      localStorage.removeItem('token');
-                      localStorage.removeItem('userId');
-                      setUserId(null);
-                    }}
-                  >
+                  <Link href='/login' onClick={handleLogout}>
                     Déconnexion
                   </Link>
                 </span>

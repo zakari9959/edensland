@@ -59,7 +59,6 @@ export default function CreateBook({}: Props) {
     if (imageUrl) {
       formDataToSubmit.append('imageUrl', imageUrl);
     }
-    // Envoyer la réponse JSON à votre API personnelle
     const apiResponse = await fetch(
       'https://edensland-api.vercel.app/api/books',
       {
@@ -67,11 +66,9 @@ export default function CreateBook({}: Props) {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        body: formDataToSubmit, // Envoyer la réponse JSON de l'API GPT
+        body: formDataToSubmit,
       }
     );
-
-    // Traiter la réponse de votre API personnelle si nécessaire
     if (apiResponse.ok) {
     } else {
       console.error(

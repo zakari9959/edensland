@@ -14,7 +14,7 @@ test('Le lien "Accueil" fonctionne correctement', async () => {
 
   const accueilLink = screen.getByRole('link', { name: 'Accueil' });
   await user.click(accueilLink);
-  await screen.findByText('Accueil'); // Supposons que votre page d'accueil affiche "Accueil" après la redirection
+  await screen.findByText('Accueil');
   expect(window.location.pathname).toBe('/');
 });
 
