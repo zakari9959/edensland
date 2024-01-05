@@ -71,16 +71,17 @@ export default function CreateBook({}: Props) {
         body: formDataToSubmit,
       }
     );
+    const data = await apiResponse.json();
     if (apiResponse.ok) {
-      const data = await apiResponse.json();
       setvalidationMessage(data.message);
       setLoading(false);
     } else {
       console.error(
         "Une erreur s'est produite lors de la requête vers votre API personnelle"
       );
-      const errorMessage = await apiResponse.text();
+      const errorMessage = await data.error();
       setvalidationMessage('Error: ' + errorMessage);
+      setLoading(false);
     }
   };
 
@@ -95,7 +96,6 @@ export default function CreateBook({}: Props) {
       setImageUrl(file);
     }
   };
-  console.log('validationMessage:', validationMessage);
 
   return (
     <form className='create__book' onSubmit={handleSubmit}>
