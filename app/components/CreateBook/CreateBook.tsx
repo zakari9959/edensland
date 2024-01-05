@@ -52,7 +52,6 @@ export default function CreateBook({}: Props) {
     if (generatedText !== null) {
       console.log(generatedText);
       setGeneratedText(generatedText);
-      setLoading(false);
     }
     const formDataToSubmit = new FormData();
     if (generatedText) {
@@ -75,6 +74,7 @@ export default function CreateBook({}: Props) {
     if (apiResponse.ok) {
       const data = await apiResponse.json();
       setvalidationMessage(data.message);
+      setLoading(false);
     } else {
       console.error(
         "Une erreur s'est produite lors de la requête vers votre API personnelle"
@@ -95,6 +95,8 @@ export default function CreateBook({}: Props) {
       setImageUrl(file);
     }
   };
+  console.log('validationMessage:', validationMessage);
+
   return (
     <form className='create__book' onSubmit={handleSubmit}>
       <div className='create__book__image__input create__book__image'>
