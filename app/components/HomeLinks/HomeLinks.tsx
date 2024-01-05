@@ -9,13 +9,13 @@ export default function HomeLinks() {
   return (
     <div className='homelinks'>
       <Link href='/bibli' className='homelink'>
-        <Image
+        {/* <Image
           className='homelink__img'
           src='/assets/logo-edensland.png'
           alt='Logo de livres'
           width={imgwidth}
           height={imgheight}
-        />
+        /> */}
         <div className='homelink__desc'>
           <h2>Votre Bibliothèque</h2>
           <p>
@@ -25,13 +25,13 @@ export default function HomeLinks() {
         </div>
       </Link>
       <Link href='/reader' className='homelink'>
-        <Image
+        {/*  <Image
           className='homelink__img'
           src='/assets/logo-edensland.png'
           alt='Logo de livres'
           width={imgwidth}
           height={imgheight}
-        />
+        /> */}
         <div className='homelink__desc'>
           <h2>Lecteur</h2>
           <p>
@@ -41,13 +41,13 @@ export default function HomeLinks() {
         </div>
       </Link>
       <Link href='/login' className='homelink'>
-        <Image
+        {/* <Image
           className='homelink__img'
           src='/assets/logo-edensland.png'
           alt='Logo de livres'
           width={imgwidth}
           height={imgheight}
-        />
+        /> */}
         <div className='homelink__desc'>
           <h2>Inscription & Connexion</h2>
           <p>

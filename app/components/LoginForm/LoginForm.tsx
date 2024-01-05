@@ -44,7 +44,10 @@ export default function LoginForm() {
             localStorage.setItem('token', token),
             localStorage.setItem('userId', userId),
             setUserId(userId))
-          : console.log('Inscription réussie !');
+          : console.log('Inscription réussie !'),
+          localStorage.setItem('token', token),
+          localStorage.setItem('userId', userId),
+          setUserId(userId);
         router.push('/bibli');
       } else {
         const responseData = await response.json();
