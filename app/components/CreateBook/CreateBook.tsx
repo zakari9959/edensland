@@ -76,7 +76,7 @@ export default function CreateBook({}: Props) {
         "Une erreur s'est produite lors de la requête vers votre API personnelle"
       );
       const errorMessage = await apiResponse.text();
-      setError(errorMessage);
+      setError('Error: ' + errorMessage);
     }
   };
 
