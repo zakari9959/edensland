@@ -49,9 +49,12 @@ export default function CreateBook({}: Props) {
     });
 
     const generatedText = chatCompletion.choices[0].message.content;
-    if (generatedText !== null) {
+    if (generatedText) {
       console.log(generatedText);
       setGeneratedText(generatedText);
+    } else {
+      setvalidationMessage('Erreur lors de la requête GPT API');
+      setLoading(false);
     }
     const formDataToSubmit = new FormData();
     if (generatedText) {
