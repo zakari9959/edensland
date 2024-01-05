@@ -12,7 +12,9 @@ export default function CreateBook({}: Props) {
   const [userInput, setUserInput] = useState('');
   const [imageUrl, setImageUrl] = useState<null | File>(null);
   const { userId, setUserId } = useUserIdContext();
-  const [error, setError] = useState<string | null>(null);
+  const [validationMessage, setvalidationMessage] = useState<string | null>(
+    null
+  );
   const token =
     typeof window !== 'undefined' ? localStorage.getItem('token') : null;
 
@@ -71,12 +73,14 @@ export default function CreateBook({}: Props) {
       }
     );
     if (apiResponse.ok) {
+      const data = await apiResponse.json();
+      setvalidationMessage(data.message);
     } else {
       console.error(
         "Une erreur s'est produite lors de la requête vers votre API personnelle"
       );
       const errorMessage = await apiResponse.text();
-      setError('Error: ' + errorMessage);
+      setvalidationMessage('Error: ' + errorMessage);
     }
   };
 
@@ -133,7 +137,9 @@ export default function CreateBook({}: Props) {
             ? 'Génération de votre histoire...'
             : 'Générez votre histoire'}
         </button>
-        {error && <div style={{ color: 'red' }}>{error}</div>}
+        {validationMessage && (
+          <div style={{ color: 'red' }}>{validationMessage}</div>
+        )}
       </div>
     </form>
   );
