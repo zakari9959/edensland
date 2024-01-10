@@ -105,13 +105,12 @@ export default function CreateBook({}: Props) {
       <div className='create__book__image__input create__book__image'>
         <label htmlFor='image'>
           Ajoutez une image de couverture pour votre livre, je vous recommande
-          de la générer gratuitement avec BingChatAI
+          de la générer gratuitement avec Dall-E et Copilot
         </label>
         <input
           type='file'
           accept='image/*'
           onChange={handleImageChange}
-          required={true}
           style={{ display: 'none' }}
           id='image'
         />

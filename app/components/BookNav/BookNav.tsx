@@ -46,13 +46,17 @@ function BookNav({ bookData }: BookNavProps) {
       {selectedBook && (
         <div className='booknav__cover'>
           <h3>{selectedBook.title}</h3>
-          <Image
-            className='booknav__cover'
-            src={selectedBook.imageUrl}
-            width={150}
-            height={200}
-            alt='Book Cover'
-          />
+          {selectedBook.imageUrl ? (
+            <Image
+              className='booknav__cover'
+              src={selectedBook.imageUrl}
+              width={150}
+              height={200}
+              alt='Book Cover'
+            />
+          ) : (
+            <p className='booknav__nocover'>{selectedBook.title}</p>
+          )}
         </div>
       )}
     </section>

@@ -15,6 +15,15 @@
   width: 200px;
   margin: 20px auto;
 }
+.booknav__nocover {
+  margin: 20px auto;
+  width: 150px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  background-color: whitesmoke;
+  text-align: center;
+}
 .booknav__selection {
   margin: 20px;
 }

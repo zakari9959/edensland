@@ -9,13 +9,13 @@ const WelcomeAnimation: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimationComplete(true);
-    }, 2000); // Durée de l'animation en millisecondes
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
 
   if (animationComplete) {
-    return null; // Retourne null pour que le composant soit retiré du DOM
+    return null;
   }
 
   return (

@@ -9,21 +9,68 @@
   align-items: center;
   gap: 50px;
 }
-.homelinks .homelink__img {
-  padding: 10px 0 10px 0;
-}
 .homelinks .homelink__desc {
-  width: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   min-height: 100px;
-  margin: 20px 0 20px 20px;
-  padding: 20px;
+  margin-bottom: 70px;
   background-color: rgba(191, 110, 155, 0.6);
   border-radius: 5px;
   text-align: center;
   font-size: 14px;
-  transition: ease-out 0.3s;
+  max-width: 800px;
 }
-.homelinks .homelink__desc:hover {
-  background-color: #4c2556;
+.homelinks .homelink__desc__img {
+  max-width: 400px;
+  height: 100%;
+  flex-basis: 50%;
+}
+.homelinks .homelink__desc__text {
+  flex-basis: 50%;
+  padding: 10px;
+}
+.homelinks .homelink__desc__text h2 {
+  margin: 10px;
+  font-size: 20px;
+}
+.homelinks .homelink__desc__text p {
+  padding: 0 30px;
+}
+.homelinks .homelink__desc__text__btn {
+  margin: 10px auto 0;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: rgba(191, 110, 155, 0.6);
+  transition: ease-out 0.3s;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.homelinks .homelink__desc__text__btn:hover {
+  background-color: rgba(76, 37, 86, 0.9);
   color: #ddf0ff;
+}
+.homelinks .homelink__desc--reverse {
+  flex-direction: row-reverse;
+}
+.homelinks .homelink__video {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .homelinks .homelink__desc {
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+  }
+  .homelinks .homelink__desc__img {
+    border-radius: 10px;
+    flex-basis: auto;
+    max-width: 265px;
+  }
+  .homelinks .homelink__desc__text {
+    max-width: 265px;
+    flex-basis: auto;
+  }
 }/*# sourceMappingURL=HomeLinks.css.map */

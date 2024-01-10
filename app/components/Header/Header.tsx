@@ -19,7 +19,6 @@ export default function Header(): JSX.Element {
     { path: '/', title: 'Accueil' },
     { path: '/bibli', title: 'Bibliothèque' },
     { path: `/reader`, title: 'Lecteur' },
-    // Ajoutez plus de pages ici si nécessaire
   ];
   return (
     <>

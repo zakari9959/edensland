@@ -91,12 +91,16 @@ const FlipBook: React.FC<FlipBookProps> = () => {
         >
           <div className='book__page__content'>
             {isCoverPageVisible ? (
-              <Image
-                width={400}
-                height={600}
-                src={selectedBook.imageUrl}
-                alt='Book Cover'
-              />
+              selectedBook.imageUrl ? (
+                <Image
+                  width={400}
+                  height={600}
+                  src={selectedBook.imageUrl}
+                  alt='Book Cover'
+                />
+              ) : (
+                <p>{selectedBook.title}</p>
+              )
             ) : (
               <p>{selectedBook.text[currentPage]}</p>
             )}

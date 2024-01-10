@@ -31,7 +31,15 @@
   margin-bottom: 20px;
   text-align: center;
 }
-.bibli .biblilist__book__button {
+.bibli .biblilist__book__nocover {
+  width: 100px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  background-color: whitesmoke;
+  text-align: center;
+}
+.bibli .biblilist__book__delete {
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 14px;

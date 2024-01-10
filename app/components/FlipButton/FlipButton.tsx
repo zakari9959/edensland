@@ -22,7 +22,7 @@ export default function FlipButton({
         setIsFlippingRight(null);
         setCurrentPage(newPage);
         setIsHalfway(false);
-      }, HALFWAY_DELAY); // Transition duration + additional delay
+      }, HALFWAY_DELAY);
     }, TRANSITION_DELAY);
   };
 

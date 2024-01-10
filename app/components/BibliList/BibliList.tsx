@@ -11,9 +11,9 @@ export default function BibliList() {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const { userId, setUserId } = useUserIdContext();
-
   const token =
     typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+
   useEffect(() => {
     if (token) {
       fetch('https://edensland-api.vercel.app/api/books', {
@@ -40,7 +40,7 @@ export default function BibliList() {
   }, [token]);
   const handleDeleteBook = (bookId: number) => {
     if (token) {
-      fetch(`http://localhost:4000/api/books/${bookId}`, {
+      fetch(`https://edensland-api.vercel.app/api/books/${bookId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -76,17 +76,21 @@ export default function BibliList() {
                     onClick={() => setSelectedBook(book)}
                   >
                     <h3>{book.title}</h3>
-                    <Image
-                      key={book._id} // Assurez-vous d'avoir une clé unique pour chaque livre
-                      className='biblilist__book__img'
-                      width={100}
-                      height={150}
-                      src={book.imageUrl}
-                      alt={`Couverture du livre ${book.title}`}
-                    />
+                    {book.imageUrl ? (
+                      <Image
+                        key={book._id}
+                        className='biblilist__book__img'
+                        width={100}
+                        height={150}
+                        src={book.imageUrl}
+                        alt={`Couverture du livre ${book.title}`}
+                      />
+                    ) : (
+                      <p className='biblilist__book__nocover'>{book.title}</p>
+                    )}
                   </Link>
                   <button
-                    className='biblilist__book__button'
+                    className='biblilist__book__delete'
                     onClick={() => handleDeleteBook(book._id)}
                   >
                     Supprimer
