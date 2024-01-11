@@ -4,6 +4,8 @@ import OpenAI from 'openai';
 import './CreateBook.css';
 import { useUserIdContext } from '@/app/context/userIdContext';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useSelectedBookContext } from '@/app/context/bookDataContext';
 
 type Props = {};
 
@@ -19,6 +21,8 @@ export default function CreateBook({}: Props) {
     typeof window !== 'undefined' ? localStorage.getItem('token') : null;
 
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const { selectedBook, setSelectedBook } = useSelectedBookContext();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -78,11 +82,13 @@ export default function CreateBook({}: Props) {
     if (apiResponse.ok) {
       setvalidationMessage(data.message);
       setLoading(false);
+      router.push('/reader');
+      setSelectedBook(data.book);
     } else {
       console.error(
         "Une erreur s'est produite lors de la requête vers votre API personnelle"
       );
-      const errorMessage = await data.error();
+      const errorMessage = data.error;
       setvalidationMessage('Error: ' + errorMessage);
       setLoading(false);
     }
@@ -111,7 +117,7 @@ export default function CreateBook({}: Props) {
           type='file'
           accept='image/*'
           onChange={handleImageChange}
-          style={{ display: 'none' }}
+          style={{ visibility: 'hidden', width: 0 }}
           id='image'
         />
         <label htmlFor='image' className='create__book__image'>

@@ -18,7 +18,7 @@ export const SelectedBookContextProvider = ({
   children: ReactNode;
 }) => {
   const [bookData, setBookData] = useState<Book[]>([]);
-  const [selectedBook, setSelectedBook] = useState<Book | null>(null); // Initialisez-le à undefined au début
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
 
   useEffect(() => {
     const token =
